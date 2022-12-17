@@ -14,14 +14,14 @@ Trained with Fashion MNIST model.
 To train the model using the MNIST data, a new model with a different set of parameters was created.
 The class name and other parameters for the MNIST Model were changed as appropriate, and ImageOps was used to transform the RGB to grey scale to create the image array shape (28,28,1). The resulting inference model is tested using a sneaker image, and the prediction performed well with greater accuracy.
 The output model has been saved in the output folder and will subsequently be utilized for lite model conversion and prediction use.
-![alt]()
-![alt]()
+![alt](https://github.com/vinaykumarseelam/Bonus_work_1/blob/main/SS_1.png)
+![alt](https://github.com/vinaykumarseelam/Bonus_work_1/blob/main/SS_2.png)
 
 ## 2.TF Lite 
  For embedded and mobile devices where the model needs to be smaller and more precise, lightweight models are used.
  This time, the converted model forecasted the sneakers as sandals, which is similar to the actual prediction. Export TF lite would take the model stored from the previous step and convert it to a lite model, which is then utilized to make inferences. s.
 
-![alt]()
+![alt](https://github.com/vinaykumarseelam/Bonus_work_1/blob/main/SS_3.png)
 
 
 ## 3.Serving with REST APIs
@@ -31,10 +31,7 @@ The output model has been saved in the output folder and will subsequently be ut
  2.As a result, output/fashion/1 would contain an output folder. This model is combined with our API to generate predictions.
  3.The restfull API returns the JSON format and from there we need to extract the predictions, this repsonse is generated when we call http://localhost:8501/v1/models/saved_model:predict which will return the result in JSON format.
  4.Using this code, we extract the picture from class names[np.argmax(predictions[0])], np.argmax(predictions[0]), class names[test labels[0]], and test labels[0]. the forecasts array
- 5.The essential code is located in the file apiserving.py, which has been run in Colab. The model, which is located in the outputs/fashion/1 folder, has been uploaded to my drive and put to use by running the code in Colab to carry out the serving process. The predictions are as follows.
- ![alt]()
- ![alt]()
-
+ 5.The essential code is located in the file apiserving.py, which has been run in Colab. The model, which is located in the outputs/fashion/1 folder, has been uploaded to my drive and put to use by running the code in Colab to carry out the serving process. 
 
 # MultiModalClassifier
 This project repository contains well-known models from Tensorflow and Pytorch for a multi-modal deep learning classifier. These fundamental models serve as a foundation upon which to develop and can serve as a springboard for any fresh concepts or uses. Please consult this repository for ML and DL fundamentals: https://github.com/lkk688/DeepDataMiningLearning.
